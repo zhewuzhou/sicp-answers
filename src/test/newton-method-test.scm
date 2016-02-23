@@ -12,4 +12,5 @@
   (check (< (abs (- (square result) 2)) 0.001) "should be good with new-if"))
 
 (run-test '(test-sqrt-iter))
+;;;This will cause infinite recursion
 ;;;(run-test '(test-sqrt-iter-new))

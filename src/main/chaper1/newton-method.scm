@@ -1,3 +1,4 @@
+;;; newton-method.scm
 (define (average x y)
   (/ (+ x y) 2))
 
@@ -35,5 +36,3 @@
           guess
           (sqrt-iter-new (improve guess x)
                          x)))
-
-(sqrt-iter 1 2)
