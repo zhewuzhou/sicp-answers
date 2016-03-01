@@ -1,4 +1,5 @@
-;;; newton-method.scm
+#lang racket/base
+
 (define (average x y)
   (/ (+ x y) 2))
 
@@ -36,3 +37,8 @@
           guess
           (sqrt-iter-new (improve guess x)
                          x)))
+
+(provide sqrt-iter-new
+         sqrt-iter
+         abs
+         improve)

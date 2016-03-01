@@ -1,5 +1,7 @@
-;;; 1-7.scm
-(load-relative "newton-method.scm")
+;;; 1-7.rkt
+#lang racket/base
+
+(require "newton-method.rkt")
 
 (define (precise-guess? guess pre-guess)
   (< (/ (abs (- guess pre-guess)) pre-guess) (/ 0.0001 guess)))
@@ -8,3 +10,6 @@
   (if(precise-guess? guess (improve guess x))
      (exact->inexact guess)
      (precise-sqrt-iter (improve guess x) x)))
+
+
+(provide precise-sqrt-iter)
