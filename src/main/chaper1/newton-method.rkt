@@ -40,5 +40,6 @@
 
 (provide sqrt-iter-new
          sqrt-iter
+         square
          abs
          improve)
