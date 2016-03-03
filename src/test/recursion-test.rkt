@@ -13,5 +13,6 @@
       "test iteratable cc"
     (check-eq? (count-change 5) 2 "5 should have 2 count change")
     (check-eq? (count-change 10) 4 "10 should have 4 count change means")
-    (check-eq? (count-change 50) 50 "50 should have 4 count change means")
+    (check-eq? (count-change 50) 50 "50 should have 50 count change means")
+    (check-eq? (count-change 100) 292 "100 should have 292 count change")
     (check-eq? (count-change 200) 2435 "200 should have 2435 count change means")))
