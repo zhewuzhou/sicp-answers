@@ -1,7 +1,9 @@
 #lang racket/base
 
-(define (pascal-triangle n)
-  (cond ((= n 1) '(1))
-        ((= n 2) '(1 1))))
+(define (pascal-triangle row col)
+  (cond ((< row col) #f)
+        ((or (= 1 col) (= row col)) 1)
+        (else (+ (pascal-triangle (- row 1) col)
+                 (pascal-triangle (- row 1) (- col 1))))))
 
 (provide pascal-triangle)
