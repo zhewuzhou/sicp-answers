@@ -1,6 +1,8 @@
 #lang racket/base
 
 ;;; the time complexity is log3(n)+3
+;;; TODO: could finish all practices introduce algorithm
+
 (module+ test
   (require rackunit
            "../../main/chaper1/1-15.rkt")
