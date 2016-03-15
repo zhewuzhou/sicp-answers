@@ -2,7 +2,7 @@
 
 (module+ test
   (require rackunit
-           "../main/recursion.rkt")
+           "../../main/chaper1/recursion.rkt")
   (test-case
       "test iteratable fib"
     (check-eq? (fib 4) 3 "fib 4 should be 3")
