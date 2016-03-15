@@ -13,11 +13,13 @@
        (else (* b (fast-expt b (- n 1))))))
 
 ;;; This is the iterative process
+(define (expt-internal b n f)
+  (cond ((= n 1) (* b f))
+        ((even? n) (expt-internal (square b) (/ n 2) f))
+        (else (expt-internal (square b) (/ (- n 1) 2) (* b f)))))
 
 (define (fast-expt-iter b n)
-  (cond ((= n 1) b)
-        ((even? n) (fast-expt-iter (square b) (/ n 2)))
-        (else (* b (fast-expt-iter (square b) (/ (- n 1) 2))))))
+  (expt-internal b n 1))
 
 (provide fast-expt
          fast-expt-iter)
