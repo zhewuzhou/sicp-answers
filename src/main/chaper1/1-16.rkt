@@ -13,6 +13,7 @@
        (else (* b (fast-expt b (- n 1))))))
 
 ;;; This is the iterative process
+;;; lessons and learn, calculate in mind first, don't rush to code
 (define (expt-internal b n f)
   (cond ((= n 1) (* b f))
         ((even? n) (expt-internal (square b) (/ n 2) f))
