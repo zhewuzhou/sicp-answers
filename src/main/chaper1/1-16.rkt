@@ -1,11 +1,6 @@
 #lang racket/base
 
-(define (square n)
-  (* n n))
-
-(define (even? n)
-  (= (remainder n 2) 0))
-
+(require "../utils/common.rkt")
 ;;; This is the recursive process
 (define (fast-expt b n)
   (cond((= n 0) 1)

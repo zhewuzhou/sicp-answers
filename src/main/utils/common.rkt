@@ -6,5 +6,15 @@
 (define (square n)
   (* n n))
 
+(define (average x y)
+  (/ (+ x y) 2))
+
+(define (abs x)
+  (if (< x 0)
+      (- x)
+      x))
+
 (provide even?
-         square)
+         square
+         average
+         abs)

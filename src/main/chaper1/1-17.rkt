@@ -1,7 +1,6 @@
 #lang racket/base
 
-(define (even? n)
-  (= (remainder n 2) 0))
+(require "../utils/common.rkt")
 
 (define (multi-internal a b f)
   (cond ((= a 1) (+ b f))

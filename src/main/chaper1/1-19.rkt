@@ -1,7 +1,6 @@
 #lang racket/base
 
-(define (even? n)
-  (= (remainder n 2) 0))
+(require "../utils/common.rkt")
 
 (define (fast-fib-iter a b p q count)
   (cond ((= count 0) b)

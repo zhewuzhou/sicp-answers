@@ -1,15 +1,6 @@
 #lang racket/base
 
-(define (average x y)
-  (/ (+ x y) 2))
-
-(define (abs x)
-  (if (< x 0)
-      (- x)
-      x))
-
-(define (square x)
-  (* x x))
+(require "../utils/common.rkt")
 
 (define (improve guess x)
   (average guess (/ x guess)))
