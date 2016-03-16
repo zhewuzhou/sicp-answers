@@ -5,7 +5,8 @@
            "../../main/chaper1/prime.rkt")
   (test-case
       "prime?"
-    (check-true (prime? 7)))
+    (check-true (prime? 7))
+    (check-true (prime? 1019)))
 
   (test-case
       "fast-prime?"
