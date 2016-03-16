@@ -35,4 +35,5 @@
         (else #f)))
 
 (provide prime?
-         fast-prime?)
+         fast-prime?
+         smallest-divisor)
