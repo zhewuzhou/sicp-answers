@@ -5,6 +5,10 @@
 (define (divides? a b)
   (= (remainder b a) 0))
 
+(define (suggest-next pre)
+  (cond ((= pre 2) 3)
+        (else (+ pre 2))))
+
 (define (find-divisor n test-divisor)
   (cond ((> (* test-divisor test-divisor) n) n)
         ((divides? test-divisor n) test-divisor)
