@@ -11,4 +11,11 @@
 (define (sum-cubes a b)
   (sum-iter cubes a inc b))
 
-(provide sum-cubes)
+(define (integral f a b dx)
+  (define (add-dx x) (+ x dx))
+  (* (sum-iter f (+ a (/ dx 2.0)) add-dx b)
+     dx))
+
+(provide sum-cubes
+         integral
+         cubes)
