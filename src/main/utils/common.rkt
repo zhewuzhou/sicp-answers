@@ -14,11 +14,18 @@
       (- x)
       x))
 
-(define (sum-range term a next b)
+(define (sum-range f a next b)
   (if (> a b)
       0
-      (+ (term a)
-         (sum-range term (next a) next b))))
+      (+ (f a)
+         (sum-range f (next a) next b))))
+
+(define (sum-iter f a next b)
+  (define (iter n result)
+    (if (> n b)
+        result
+        (iter (next n) (+ (f n) result))))
+  (iter a 0))
 
 (define (cube n)
   (* n n n))
@@ -36,6 +43,7 @@
          inc
          average
          sum-range
+         sum-iter
          integral
          cube
          abs)
