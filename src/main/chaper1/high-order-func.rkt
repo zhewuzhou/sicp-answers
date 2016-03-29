@@ -9,11 +9,11 @@
   (* n n n))
 
 (define (sum-cubes a b)
-  (sum-iter cubes a inc b))
+  (sum-range cubes a inc b))
 
 (define (integral f a b dx)
   (define (add-dx x) (+ x dx))
-  (* (sum-iter f (+ a (/ dx 2.0)) add-dx b)
+  (* (sum-range f (+ a (/ dx 2.0)) add-dx b)
      dx))
 
 (provide sum-cubes

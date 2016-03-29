@@ -14,11 +14,11 @@
       (- x)
       x))
 
-(define (sum-iter term a next b)
+(define (sum-range term a next b)
   (if (> a b)
       0
       (+ (term a)
-         (sum-iter term (next a) next b))))
+         (sum-range term (next a) next b))))
 
 (define (cube n)
   (* n n n))
@@ -28,14 +28,14 @@
 
 (define (integral f a b dx)
   (define (add-dx x) (+ x dx))
-  (* (sum-iter f (+ a (/ dx 2.0)) add-dx b)
+  (* (sum-range f (+ a (/ dx 2.0)) add-dx b)
      dx))
 
 (provide even?
          square
          inc
          average
-         sum-iter
+         sum-range
          integral
          cube
          abs)

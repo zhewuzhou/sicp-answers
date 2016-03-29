@@ -12,6 +12,6 @@
              ((even? k) 2)
              (else 4))
        (y k)))
-  (/ (* h (sum-iter term 0 inc n)) 3.0))
+  (/ (* h (sum-range term 0 inc n)) 3.0))
 
 (provide simpson)
