@@ -1,6 +1,7 @@
 #lang racket/base
 
-(require "./prime.rkt")
+(require "./prime.rkt"
+         "./1-20.rkt")
 
 (define (filtered-acc combiner filter null-value f a next b)
   (define (iter n result)
@@ -18,4 +19,16 @@
     x)
   (filtered-acc add prime? 0 self a inc b))
 
-(provide sum-prime)
+(define (sum-prime-with-n n)
+  (define (mul x y)
+    (* x y))
+  (define (inc x)
+    (+ x 1))
+  (define (self x)
+    x)
+  (define (prime-with-n? x)
+    (= (gcd-iter n x) 1))
+  (filtered-acc mul prime-with-n? 1 self 2 inc n))
+
+(provide sum-prime
+         sum-prime-with-n)
