@@ -4,10 +4,13 @@
          "./1-20.rkt")
 
 (define (filtered-acc combiner filter null-value f a next b)
+  (define (try-combine n result)
+    (if (filter n)
+        (combiner (f n) result)
+        result))
   (define (iter n result)
     (cond ((> n b) result)
-          ((filter n) (iter (next n) (combiner (f n) result)))
-          (else (iter (next n) result))))
+          (else (iter (next n) (try-combine n result)))))
   (iter a null-value))
 
 (define (sum-prime a b)
