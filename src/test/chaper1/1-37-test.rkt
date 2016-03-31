@@ -10,4 +10,10 @@
      (cont-frac (lambda (i) 1.0)
                 (lambda (i) 1.0)
                 10)
-     1.618 1e-4 "")))
+     0.618 1e-4 "")
+
+    (check-=
+     (cont-frac-iter (lambda (i) 1.0)
+                (lambda (i) 1.0)
+                10)
+     0.618 1e-4 "")))
