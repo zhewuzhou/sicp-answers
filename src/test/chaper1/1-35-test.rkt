@@ -9,4 +9,12 @@
     (check-= (fixed-point
               (lambda (x)
                 (+ 1 (/ 1.0 x)))
-              1.0) 1.61803278 1e-5)))
+              1.0) 1.61803278 1e-5)
+    (check-= (fixed-point
+              (lambda (x)
+                (/ (log 1000) (log x)))
+              2.0) 4.5555322 1e-5)
+    (check-= (fixed-point-damp
+              (lambda (x)
+                (/ (log 1000) (log x)))
+              2.0) 4.5555322 1e-5)))
