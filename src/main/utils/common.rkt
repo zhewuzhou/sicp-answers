@@ -1,18 +1,10 @@
 #lang racket/base
 
-(define (even? n)
-  (= (remainder n 2) 0))
-
 (define (square n)
   (* n n))
 
 (define (average x y)
   (/ (+ x y) 2))
-
-(define (abs x)
-  (if (< x 0)
-      (- x)
-      x))
 
 (define (sum-range f a next b)
   (if (> a b)
@@ -38,12 +30,9 @@
   (* (sum-range f (+ a (/ dx 2.0)) add-dx b)
      dx))
 
-(provide even?
-         square
-         inc
+(provide square
          average
          sum-range
          sum-iter
          integral
-         cube
-         abs)
+         cube)
