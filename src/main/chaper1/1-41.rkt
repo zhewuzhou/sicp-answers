@@ -7,6 +7,19 @@
     (f (f x))))
 
 (define (16times)
-  (((double (double double)) inc) 5))
+  (((double (double double)) (lambda (x) (+ x 1))) 5))
 
-(provide 16times)
+(define (repeated f n)
+  (define (compose-fns g h)
+    (lambda(x)
+      (g (h x))))
+  (define (repeat-iter g count)
+    (if (= count n)
+        g
+        (repeat-iter (compose-fns g f)
+                     (+ count 1))))
+  (lambda(x)
+    ((repeat-iter f 1) x)))
+
+(provide 16times
+         repeated)

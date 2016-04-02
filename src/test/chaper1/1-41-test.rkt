@@ -5,7 +5,13 @@
            "../../main/chaper1/1-41.rkt")
   (test-case
       "16times"
-    (check-eq? (16times) 21 "")))
+    (check-eq? (16times) 21 ""))
+  (test-case
+      "repeated"
+    (define (square x)
+      (* x x))
+    (check-eq? ((repeated square 2) 5) 625 "")
+    (check-eq? ((repeated square 5) 2) 4294967296 "")))
 
 ;;; The reason why it's 16 times not 8
 ;;; (double double)
