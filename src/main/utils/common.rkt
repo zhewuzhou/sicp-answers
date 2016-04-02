@@ -32,6 +32,7 @@
 
 (provide square
          average
+         inc
          sum-range
          sum-iter
          integral
