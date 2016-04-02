@@ -16,13 +16,13 @@
           (try next))))
   (try first-guess))
 
-(define (fixed-point-damp f first-guess)
+(define (fixed-point-damp f damp first-guess)
   (displayln "this is damp fixed point")
   (define (close-enough? v1 v2)
     (< (abs (- v1 v2)) tolerance))
   (define (try guess)
     (displayln guess)
-    (let ((next (average (f guess) guess)))
+    (let ((next (damp (f guess) guess)))
       (if (close-enough? guess next)
           next
           (try next))))
