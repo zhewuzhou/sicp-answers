@@ -2,7 +2,7 @@
 
 (module+ test
   (require rackunit
-           "../../main/chaper1/1.19.rkt")
+           "../../main/chaper1/1-19.rkt")
   (test-case
       "fast-fib"
     (check-eq? (fast-fib 0) 0)
