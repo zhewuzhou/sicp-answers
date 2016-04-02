@@ -6,4 +6,4 @@
   (test-case
       "tan"
     (check-= (lambert-iter 1.0 10) (tan 1) 1e-5 "")
-    (check-eq? (lambert 1.0 10) (tan 1) "")))
+    (check-= (lambert 1.0 10) (tan 1) 1e-5 "")))
