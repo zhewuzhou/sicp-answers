@@ -22,12 +22,13 @@
   (lambda(x)
     (average x (f x))))
 
-(define (fixed-point-of-transform g transform guess)
-  (fixed-point (transform g) guess))
+(define (fixed-point-of-transform g transform damp guess)
+  (fixed-point-damp (transform g) damp guess))
 
 (define (sqrt-new x)
   (fixed-point-of-transform (lambda (y) (- (square y) x))
                             newton-transform
+                            average-damp
                             1.0))
 
 (provide newtons-method
