@@ -14,9 +14,8 @@
               (lambda (x)
                 (/ (log 1000) (log x)))
               2.0) 4.5555322 1e-5)
-    (check-= (fixed-point-damp
-              (lambda (x)
-                (/ (log 1000) (log x)))
-              (lambda (x y)
-                (/ (+ x y) 2))
+    (check-= (fixed-point
+              (let ((f (lambda (x) (/ (log 1000) (log x)))))
+                (lambda(x)
+                  (/ (+ x (f x)) 2)))
               2.0) 4.5555322 1e-5)))

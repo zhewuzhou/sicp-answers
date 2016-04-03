@@ -1,12 +1,13 @@
 #lang racket/base
 
-(require "./1-41.rkt"
+(require "../utils/common.rkt"
          "./1-40.rkt"
-         "./1-35.rkt")
+         "./1-41.rkt")
 
 (define (cube-root x)
-  (fixed-point-of-transform (lambda (y) (- (square y) x))
+  (fixed-point-of-transform (lambda (y) (/ x (square y)))
                             newton-transform
+                            average-damp
                             1.0))
 
 (provide cube-root)
