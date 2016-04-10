@@ -26,7 +26,7 @@
   (fixed-point (transform g) guess))
 
 (define (sqrt-new x)
-  (fixed-point-of-transform (lambda (y) (/ x y))
+  (fixed-point-of-transform (lambda (y)(/ x y))
                             average-damp
                             1.0))
 
