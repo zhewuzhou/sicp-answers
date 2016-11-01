@@ -12,4 +12,11 @@
                     (check-eq? (car-expt large-number)
                                7)
                     (check-eq? (cdr-expt large-number)
-                               9)))
+                               9))
+         (test-case "test Church number"
+                    (define (inc n)
+                      (+ 1 n))
+                    (check-eq? ((zero inc) 2)
+                               2)
+                    (check-eq? (((plus one two) inc) 2)
+                               5)))
